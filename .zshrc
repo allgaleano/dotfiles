@@ -74,6 +74,7 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    zsh-bat
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -120,12 +121,21 @@ eval "$(zoxide init zsh)"
 
 alias cd="z"
 
-alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep -E "state|time to\ empty|time to\ full|percentage"'
-alias bat-full='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
+alias cat="batcat"
 
-export PATH="$PATH:/opt/nvim/"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export DOCKER_HOST=unix:///var/run/docker.sock
+
+neofetch
+
+
+# fnm
+FNM_PATH="/home/galeano/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/galeano/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
