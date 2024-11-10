@@ -10,20 +10,41 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+
 set $fm eDP
 set $sm HDMI-A-1-0
 
 # picom
-exec --no-startup-id picom
+exec --no-startup-id killall picom || true; picom
 
 # Monitor setup
-exec --no-startup-id xrandr --output eDP --primary --mode 1920x1080 --rate 144
-exec --no-startup-id xrandr --output HDMI-A-1-0 --mode 2560x1440 --rate 144 --above eDP
+exec --no-startup-id xrandr --output eDP --primary --mode 1920x1080 --rate 144 
+exec --no-startup-id xrandr --output HDMI-A-1-0 --mode 2560x1440 --rate 144 --above eDP 
+
+exec_always --no-startup-id xrandr --output eDP --primary --mode 1920x1080 --rate 144 --dpi 96 --output HDMI-A-1-0 --mode 2560x1440 --rate 144 --above eDP --dpi 96
+
+exec_always --no-startup-id ~/.config/i3/scripts/lock.sh
 
 # Set consistent cursor size
 exec --no-startup-id xsetroot -cursor_name left_ptr
 exec --no-startup-id xset r rate 350 50
 exec --no-startup-id xrdb -merge ~/.Xresources
+
+# Touchpad settings
+exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "libinput Tapping Button Mapping Enabled" 0 1 0
+
+# Remove title bars
+for_window [class="^.*"] border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
+
+# Window Colors
+client.focused          #39cfed #39cfed #ffffff #39cfed   #39cfed   # Active window
+client.focused_inactive #000000 #000000 #ffffff #000000   #000000   # Inactive window, active workspace
+client.unfocused        #000000 #000000 #888888 #000000   #000000   # Inactive window, inactive workspace
+client.urgent          #A54242 #A54242 #ffffff #A54242   #A54242   # Urgent window
 
 # Workspace to monitor assignments
 workspace $ws1 output $fm
@@ -54,7 +75,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -126,14 +147,25 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+# Add to i3 config:
+bindsym Print exec --no-startup-id maim ~/Media/Pictures/$(date +%s).png
+bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) ~/Media/Pictures/$(date +%s).png
+bindsym Shift+Print exec --no-startup-id maim -s ~/Media/Pictures/$(date +%s).png
+
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# lock screen
+bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l blur
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -211,6 +243,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3blocks
-}
+# bar {
+#         status_command i3status
+# }
