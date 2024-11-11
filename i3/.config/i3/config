@@ -35,6 +35,9 @@ exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "lib
 exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "libinput Tapping Button Mapping Enabled" 0 1 0
 
+# Set wallpaper
+exec_always --no-startup-id feh --bg-fill ~/Media/Pictures/wallpapers/arch-wallpaper-1.png
+
 # Remove title bars
 for_window [class="^.*"] border pixel 2
 default_border pixel 1
@@ -150,9 +153,9 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Add to i3 config:
-bindsym Print exec --no-startup-id maim | tee ~/Media/Pictures/$(date +%s).png | xclip -sel clip -t image/png
-bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | tee ~/Media/Pictures/$(date +%s).png | xclip -sel clip -t image/png
-bindsym Shift+Print exec --no-startup-id maim -s | tee ~/Media/Pictures/$(date +%s).png | xclip -sel clip -t image/png
+bindsym Print exec --no-startup-id maim | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
+bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
+bindsym Shift+Print exec --no-startup-id maim -s | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
 
 # toggle tiling / floating
 # bindsym $mod+Shift+space floating toggle

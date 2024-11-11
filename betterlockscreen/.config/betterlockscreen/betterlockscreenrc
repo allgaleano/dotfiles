@@ -4,9 +4,9 @@
 display_on=0
 span_image=false
 lock_timeout=300
-fx_list=(dim blur dimblur pixel dimpixel color)
+fx_list=(blur dimblur pixel dimpixel color)
 dim_level=40
-blur_level=1
+blur_level=8
 pixel_scale=10,1000
 solid_color=333333
 wallpaper_cmd="feh --bg-fill"
@@ -35,7 +35,7 @@ verifcolor=ffffffff
 wrongtext="Failure!"
 wrongcolor=d23c3dff
 modifcolor=d23c3dff
-bgcolor=000000ff
+bgcolor=00000000
 
 
 #
