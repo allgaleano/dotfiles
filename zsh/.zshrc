@@ -137,14 +137,3 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 eval "$(fnm env --use-on-cd --shell zsh)"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# fnm
-FNM_PATH="/home/galeano/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/galeano/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi

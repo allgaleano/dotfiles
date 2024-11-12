@@ -10,7 +10,7 @@ xidlehook \
   --not-when-audio \
   `# Dim the screen after 60 seconds, undim if user becomes active` \
   --timer 600 \
-    'brightnessctl --save; brightnessctl set 10%' \
+    'brightnessctl --save; brightnessctl set 50%' \
     'brightnessctl --restore' \
   `# Undim & warn about suspension after 10 seconds` \
   --timer 10 \

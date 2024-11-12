@@ -102,6 +102,8 @@ format-foreground = ${colors.primary}
 [module/xworkspaces]
 type = internal/xworkspaces
 
+; pin-workspaces = true
+
 label-active = %name%
 label-active-font = 0
 label-active-background = ${colors.background-alt}
