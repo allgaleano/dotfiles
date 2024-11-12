@@ -8,16 +8,14 @@ set $sm HDMI-A-1-0
 include ~/.config/i3/workspace.conf
 
 # picom
-exec --no-startup-id killall picom
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id "killall picom; picom --config ~/.config/picom/picom.conf"
 
 # # Monitor setup
-# Monitor detection and setup
-exec_always --no-startup-id "bash -c 'if xrandr | grep \"$sm connected\"; then \
-    xrandr --output $fm --primary --mode 1920x1080 --rate 144 --dpi 96 --output $sm --mode 2560x1440 --rate 144 --above $fm --dpi 96; \
-else \
-    xrandr --output $fm --primary --mode 1920x1080 --rate 144 --dpi 96 --output $sm --off; \
-fi'"
+# Monitor setup
+exec_always --no-startup-id ~/.config/i3/scripts/monitor-setup.sh
+
+# Manual trigger
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/i3/scripts/monitor-setup.sh
 
 # Auto suspend
 exec_always --no-startup-id ~/.config/i3/scripts/lock.sh
@@ -33,7 +31,7 @@ exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "lib
 exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "libinput Tapping Button Mapping Enabled" 0 1 0
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Media/Pictures/wallpapers/arch-wallpaper-1.png
+exec_always --no-startup-id ~/.config/i3/scripts/set-wallpaper.sh
 
 # Remove title bars
 for_window [class="^.*"] border pixel 2
@@ -42,8 +40,8 @@ default_floating_border pixel 1
 
 # Window Colors
 client.focused          #39cfed #39cfed #ffffff #39cfed   #39cfed   # Active window
-client.focused_inactive #000000 #000000 #ffffff #000000   #000000   # Inactive window, active workspace
-client.unfocused        #000000 #000000 #888888 #000000   #000000   # Inactive window, inactive workspace
+client.focused_inactive #00000000 #00000000 #ffffff #00000000   #00000000   # Inactive window, active workspace
+client.unfocused        #00000000 #00000000 #888888 #00000000   #00000000   # Inactive window, inactive workspace
 client.urgent          #A54242 #A54242 #ffffff #A54242   #A54242   # Urgent window
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -151,7 +149,7 @@ bindsym Shift+Print exec --no-startup-id maim -s | tee ~/Media/Pictures/screensh
 bindsym $mod+a focus parent
 
 # polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # lock screen
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l blur

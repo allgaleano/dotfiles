@@ -1,0 +1,1 @@
+feh --bg-fill ~/Media/Pictures/wallpapers/arch-wallpaper-1.png

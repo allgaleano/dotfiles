@@ -77,6 +77,7 @@ module-margin = 1
 ; separator-foreground = ${colors.disabled}
 
 font-0 = Meslo LGM Nerd Font:size=10;2
+font-1 = FiraCode Nerd Font:size=12;2
 
 modules-left = arch-logo xworkspaces xwindow
 modules-right = battery pulseaudio memory cpu wlan date
@@ -104,7 +105,7 @@ format-foreground = ${colors.primary}
 [module/xworkspaces]
 type = internal/xworkspaces
 
-; pin-workspaces = true
+pin-workspaces = true
 
 label-active = %name%
 label-active-font = 0
