@@ -162,7 +162,7 @@ format-volume = <label-volume>
 
 label-volume = %percentage%%
 
-label-muted = "  muted"
+label-muted = " "
 label-muted-foreground = ${colors.disabled}
 
 [module/backlight]
