@@ -2,23 +2,6 @@
 
 This repository contains my personal dotfiles managed with GNU Stow.
 
-## Structure
-```
-dotfiles/
-├── alacritty/
-│   └── .config/
-│       └── alacritty/
-│           ├── alacritty.toml
-│           ├── custom_themes/
-│           └── themes/
-├── zsh/
-│   └── .zshrc
-└── gnome/
-    └── .config/
-        └── dconf/
-            └── dash-to-panel.config
-```
-
 ## Prerequisites
 
 Install GNU Stow:
@@ -32,6 +15,8 @@ sudo dnf install stow
 
 # Arch
 sudo pacman -S stow
+# or
+yay -S stow
 ```
 
 ## Installation
@@ -46,7 +31,6 @@ cd ~/.dotfiles
 ```bash
 mv ~/.config/alacritty ~/.config/alacritty.backup
 mv ~/.zshrc ~/.zshrc.backup
-mv ~/.config/dconf/dash-to-panel.config ~/.config/dconf/dash-to-panel.config.backup
 ```
 
 3. Use stow to create symlinks:
@@ -54,7 +38,6 @@ mv ~/.config/dconf/dash-to-panel.config ~/.config/dconf/dash-to-panel.config.bac
 # Stow individual configurations
 stow alacritty  # Terminal configuration
 stow zsh        # ZSH configuration
-stow gnome      # GNOME settings
 
 # Or stow everything at once
 stow */
@@ -66,7 +49,6 @@ To remove the symlinks created by stow:
 ```bash
 stow -D alacritty  # Remove alacritty config
 stow -D zsh        # Remove zsh config
-stow -D gnome      # Remove gnome config
 
 # Or remove everything
 stow -D */
@@ -78,7 +60,6 @@ To update (restow) configurations after changes:
 ```bash
 stow -R alacritty  # Restow alacritty config
 stow -R zsh        # Restow zsh config
-stow -R gnome      # Restow gnome config
 
 # Or restow everything
 stow -R */
