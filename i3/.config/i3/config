@@ -5,6 +5,8 @@ set $mmd Mod4
 set $fm eDP
 set $sm HDMI-A-1-0
 
+set $primaryColor #39cfed
+
 include ~/.config/i3/workspace.conf
 
 # picom
@@ -32,6 +34,9 @@ exec_always --no-startup-id xinput set-prop "PNP0C50:0e 06CB:7E7E Touchpad" "lib
 
 # Set wallpaper
 exec_always --no-startup-id ~/.config/i3/scripts/set-wallpaper.sh
+
+# Notification daemon
+exec --no-startup-id "killall dunst; dunst --config ~/.config/dunst/dunstrc"
 
 # Remove title bars
 for_window [class="^.*"] border pixel 2
@@ -135,9 +140,9 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Add to i3 config:
-bindsym Print exec --no-startup-id maim | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
-bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
-bindsym Shift+Print exec --no-startup-id maim -s | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
+bindsym Shift+Print exec --no-startup-id maim | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
+# bindsym $mod+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
+bindsym Print exec --no-startup-id maim -s | tee ~/Media/Pictures/screenshots/$(date +%s).png | xclip -sel clip -t image/png
 
 # toggle tiling / floating
 # bindsym $mod+Shift+space floating toggle

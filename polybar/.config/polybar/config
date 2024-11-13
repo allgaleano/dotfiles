@@ -32,7 +32,7 @@ module-margin = 1
 ; separator = |
 ; separator-foreground = ${colors.disabled}
 
-font-0 = Meslo LGM Nerd Font:size=10;2
+font-0 = Meslo LGM Nerd Font:size=10;3
 font-1 = FiraCode Nerd Font:size=12;2
 
 modules-left = arch-logo xworkspaces xwindow
@@ -76,7 +76,7 @@ module-margin = 1
 ; separator = |
 ; separator-foreground = ${colors.disabled}
 
-font-0 = Meslo LGM Nerd Font:size=10;2
+font-0 = Meslo LGM Nerd Font:size=10;3
 font-1 = FiraCode Nerd Font:size=12;2
 
 modules-left = arch-logo xworkspaces xwindow
