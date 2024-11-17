@@ -39,12 +39,12 @@ exec_always --no-startup-id ~/.config/i3/scripts/set-wallpaper.sh
 exec --no-startup-id "killall dunst; dunst --config ~/.config/dunst/dunstrc"
 
 # Sharing screen sticky window hide
-for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
+# for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
 
 # Remove title bars
 for_window [class="^.*"] border pixel 2
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 # Window Colors
 client.focused          #39cfed #39cfed #ffffff #39cfed   #39cfed   # Active window
@@ -142,8 +142,8 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# Add to i3 config:
-bindsym Print exec --no-startup-id flameshot gui --path ~/Media/Pictures/screenshots
+# Screenshots
+bindsym Print exec --no-startup-id flameshot gui --clipboard --path ~/Media/Pictures/screenshots
 
 # toggle tiling / floating
 # bindsym $mod+Shift+space floating toggle
