@@ -135,7 +135,7 @@ label-maxlen = 50
 type = internal/battery
 battery = BAT1
 adapter = ADP1
-full-at = 95
+; full-at = 95
 
 format-charging-prefix-font = 2
 format-full-prefix-font = 2

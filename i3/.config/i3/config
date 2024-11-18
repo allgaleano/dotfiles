@@ -42,7 +42,7 @@ exec --no-startup-id "killall dunst; dunst --config ~/.config/dunst/dunstrc"
 # for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
 
 # Remove title bars
-for_window [class="^.*"] border pixel 2
+# for_window [class="^.*"] border pixel 2
 default_border pixel 2
 default_floating_border pixel 2
 
