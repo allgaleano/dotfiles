@@ -3,8 +3,8 @@
 WALLPAPERS_DIR="$HOME/Media/Pictures/wallpapers"
 
 if [ -z "$WALLPAPER" ]; then
-	echo "Error: No wallpaper specified. Please set WALLPAPER environment variabel"
-	exit 1
+    echo "Error: No wallpaper specified. Please set WALLPAPER environment variable"
+    exit 1
 fi
 
 WALLPAPER_PATH="$WALLPAPERS_DIR/$WALLPAPER_NAME"
