@@ -1,9 +1,12 @@
 #!/bin/bash
 
 WALLPAPERS_DIR="$HOME/Media/Pictures/wallpapers"
+WALLPAPER_FILE="$HOME/.config/wallpaper"
 
-if [ -z "$WALLPAPER" ]; then
-    echo "Error: No wallpaper specified. Please set WALLPAPER environment variable"
+WALLPAPER_NAME=$(cat $WALLPAPER_FILE)
+
+if [ -z "$WALLPAPER_NAME" ]; then
+    echo "Error: No wallpaper specified in $WALLPAPER_FILE."
     exit 1
 fi
 

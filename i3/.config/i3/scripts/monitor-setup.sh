@@ -4,26 +4,35 @@
 FM=$(grep "set \$fm" ~/.config/i3/config | awk '{print $3}')
 SM=$(grep "set \$sm" ~/.config/i3/config | awk '{print $3}')
 
-# Kill existing polybar instances
-killall -q polybar
+log() {
+	echo "[monitor-setup] $1"
+}
+
+log "Stopping all existing polybar instances..."
+killall polybar 2> /dev/null
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Setup monitors
 if xrandr | grep "$SM connected"; then
-    xrandr --output $FM --primary --mode 1920x1080 --rate 144 --dpi 96 --output $SM --mode 2560x1440 --rate 144 --above $FM --dpi 96
-    
-    polybar laptop 2>&1 | tee -a /tmp/polybar1.log & disown
-    polybar top_monitor 2>&1 | tee -a /tmp/polybar2.log & disown
+	log "External monitor detected, configuring dual display..."
+    	xrandr --output $FM --primary --mode 1920x1080 --output $SM --mode 2560x1440 --rate 143.91 --above $FM
+	
+	log "Starting polybar on both displays..."
+    	polybar laptop >/dev/null 2>&1 & 
+    	polybar top_monitor >/dev/null 2>&1 & 
 else
-    xrandr --output $FM --primary --mode 1920x1080 --rate 144 --dpi 96 --output $SM --off
+	log "Not external monitor detected, using laptop display only..."
+    	xrandr --output $FM --primary --mode 1920x1080 --output $SM --off
     
-    polybar laptop 2>&1 | tee -a /tmp/polybar1.log & disown
+	log "Starting polybar for laptop display..."
+    	polybar laptop >/dev/null 2>&1  & 
 fi
 
-# Reapply wallpaper after monitor configuration
 sleep 1  # Small delay to ensure monitor setup is complete
+log "Applying wallpaper..."	
 ~/.config/i3/scripts/set-wallpaper.sh
 
-echo "Monitors configured and Polybar launched..."
+log "Configuration complete!"
+exit 0
