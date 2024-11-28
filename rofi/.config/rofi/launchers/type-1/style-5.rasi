@@ -65,7 +65,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      1px solid;
-    border-radius:               0px;
+    border-radius:               10px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -157,8 +157,8 @@ case-indicator {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
-    lines:                       8;
+    columns:                     2;
+    lines:                       12;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   true;
@@ -192,51 +192,49 @@ element {
     padding:                     5px 10px;
     border:                      1px solid;
     border-radius:               10px;
-    border-color:                @background-colour;
+    border-color:                transparent;
     background-color:            transparent;
     text-color:                  @foreground-colour;
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            var(normal-background);
-    text-color:                  var(normal-foreground);
+    background-color:            transparent;
+    text-color:                  var(foreground);
 }
 element normal.urgent {
-    background-color:            var(urgent-background);
-    text-color:                  var(urgent-foreground);
-    border-color:                var(border-colour);
+    background-color:            transparent;
+    text-color:                  var(urgent);
 }
 element normal.active {
-    background-color:            var(active-background);
-    text-color:                  var(active-foreground);
-    border-color:                var(border-colour);
+    background-color:            transparent;
+    text-color:                  var(active);
 }
 element selected.normal {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
-    border-color:                var(border-colour);
+    background-color:            transparent;
+    text-color:                  var(foreground);
+    border-color:                var(selected);
 }
 element selected.urgent {
-    background-color:            var(selected-urgent-background);
-    text-color:                  var(selected-urgent-foreground);
-    border-color:                var(border-colour);
+    background-color:            transparent;
+    text-color:                  var(urgent);
+    border-color:                var(urgent);
 }
 element selected.active {
-    background-color:            var(selected-active-background);
-    text-color:                  var(selected-active-foreground);
-    border-color:                var(border-colour);
+    background-color:            transparent;
+    text-color:                  var(active);
+    border-color:                var(active);
 }
 element alternate.normal {
-    background-color:            var(alternate-normal-background);
-    text-color:                  var(alternate-normal-foreground);
+    background-color:            transparent;
+    text-color:                  var(foreground);
 }
 element alternate.urgent {
-    background-color:            var(alternate-urgent-background);
-    text-color:                  var(alternate-urgent-foreground);
+    background-color:            transparent;
+    text-color:                  var(urgent);
 }
 element alternate.active {
-    background-color:            var(alternate-active-background);
-    text-color:                  var(alternate-active-foreground);
+    background-color:            transparent;
+    text-color:                  var(active);
 }
 element-icon {
     background-color:            transparent;
@@ -269,15 +267,15 @@ button {
     padding:                     5px 10px;
     border:                      1px solid;
     border-radius:               10px;
-    border-color:                @background-colour;
-    background-color:            @alternate-background;
+    border-color:                transparent;
+    background-color:            transparent;
     text-color:                  inherit;
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
-    border-color:                var(border-colour);
+    background-color:            transparent;
+    text-color:                  var(selected);
+    border-color:                var(selected);
 }
 
 /*****----- Message -----*****/
