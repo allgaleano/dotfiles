@@ -6,7 +6,8 @@ set $mmd Mod4
 set $fm eDP
 set $sm HDMI-A-1-0
 
-set $primaryColor #39cfed
+set $pc #fbf8cc
+set $sc #636250
 
 include ~/.config/i3/workspace.conf
 
@@ -49,9 +50,9 @@ for_window [class=".*"] border pixel 2
 gaps inner 15
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #39cfed #39cfed #ffffff #39cfed   #39cfed   # Active window
-client.focused_inactive #a3a3a3 #a3a3a3 #ffffff #a3a3a3   #a3a3a3   # Inactive window, active workspace
-client.unfocused        #a3a3a3 #a3a3a3 #888888 #a3a3a3   #a3a3a3   # Inactive window, inactive workspace
+client.focused          $pc     $pc     #ffffff $pc       $pc       # Active window
+client.focused_inactive $sc     $sc     #ffffff $sc       $sc       # Inactive window, active workspace
+client.unfocused        $sc     $sc     #888888 $sc       $sc       # Inactive window, inactive workspace
 client.urgent           #A54242 #A54242 #ffffff #A54242   #A54242   # Urgent window
 
 # Font for window titles. Will also be used by the bar unless a different font
