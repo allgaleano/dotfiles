@@ -11,7 +11,7 @@ set $primaryColor #39cfed
 include ~/.config/i3/workspace.conf
 
 # picom
-exec_always --no-startup-id "killall picom; picom --config ~/.config/picom/picom.conf"
+exec_always --no-startup-id ~/.config/i3/scripts/launch-picom.sh
 
 # # Monitor setup
 # Monitor setup
