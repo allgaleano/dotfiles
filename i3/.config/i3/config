@@ -48,7 +48,6 @@ exec --no-startup-id "killall dunst; dunst --config ~/.config/dunst/dunstrc"
 # Remove title bars
 for_window [class=".*"] border pixel 2
 gaps inner 15
-
 # class                 border  backgr. text    indicator child_border
 client.focused          $pc     $pc     #ffffff $pc       $pc       # Active window
 client.focused_inactive $sc     $sc     #ffffff $sc       $sc       # Inactive window, active workspace
@@ -106,6 +105,7 @@ bindsym $mod+Shift+q kill
 
 # rofi
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+p exec --no-startup-id ~/.config/i3/scripts/power-menu.sh
 
 # change focus
 bindsym $mod+h focus left
