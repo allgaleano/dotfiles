@@ -23,7 +23,7 @@ else
             else
                 battery_icon=""
             fi
-            echo "󰂯 $device_name $battery_icon"
+            echo "󰂯 $device_name $battery_icon $percentage%"
         else
             echo "󰂯 $device_name"
         fi
