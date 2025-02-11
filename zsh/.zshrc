@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-export EDITOR=vim
+export EDITOR=/sbin/vim
 ZSH_THEME="robbyrussell"
 
 plugins=(
@@ -46,3 +46,7 @@ alias win11-connect="xfreerdp3 /v:192.168.122.13 /u:galeano /p:galeano-arch /d:.
 alias win11-shutdown="virsh --connect qemu:///system shutdown win11"
 alias vm-list-all="virsh --connect qemu:///system list --all"
 neofetch
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
