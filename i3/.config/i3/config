@@ -149,16 +149,13 @@ bindsym $mod+f fullscreen toggle
 bindsym Print exec --no-startup-id flameshot gui --clipboard --path ~/Media/Pictures/screenshots
 
 # toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 # bindsym $mod+a focus parent
-
-# polybar
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # lock screen
 bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l blur
