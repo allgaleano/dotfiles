@@ -1,0 +1,9 @@
+[Unit]
+Description=Check for system updates for polybar
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/polybar/scripts/check-updates-service.sh
+
+[Install]
+WantedBy=default.target
