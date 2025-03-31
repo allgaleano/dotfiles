@@ -47,7 +47,8 @@ exec --no-startup-id "killall dunst; dunst --config ~/.config/dunst/dunstrc"
 
 # Remove title bars
 for_window [class=".*"] border pixel 2
-gaps inner 15
+gaps inner 5
+gaps outer 0
 # class                 border  backgr. text    indicator child_border
 client.focused          $pc     $pc     #ffffff $pc       $pc       # Active window
 client.focused_inactive $sc     $sc     #ffffff $sc       $sc       # Inactive window, active workspace
