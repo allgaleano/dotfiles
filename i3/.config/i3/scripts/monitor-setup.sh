@@ -17,7 +17,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Setup monitors
 if xrandr | grep "$SM connected"; then
 	log "External monitor detected, configuring dual display..."
-    	xrandr --output $FM --primary --mode 1920x1080 --output $SM --mode 2560x1440 --rate 143.91 --above $FM
+    	xrandr --output $FM --primary --auto --pos 0x1440 --output $SM --mode 2560x1440 --rate 143.91 --pos -320x0
 	
 	log "Starting polybar on both displays..."
     	polybar laptop >/dev/null 2>&1 & 
