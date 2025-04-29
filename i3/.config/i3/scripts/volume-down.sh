@@ -1,8 +1,8 @@
 #!/bin/bash
 current=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
-new=$((current + 10))
-if [ $new -gt 100 ]; then
-    new=100
+new=$((current - 10))
+if [ $new -lt 0 ]; then
+    new=0
 fi
 pactl set-sink-mute @DEFAULT_SINK@ false
 pactl set-sink-volume @DEFAULT_SINK@ ${new}%

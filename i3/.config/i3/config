@@ -80,9 +80,9 @@ exec --no-startup-id dex --autostart --environment i3
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume-up.sh
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ -10%"
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume-down.sh
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume-mute.sh
+bindsym XF86AudioMicMute exec --no-startup-id ~/.config/i3/scripts/microphone-mute.sh
 
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/brightness_control.sh up
