@@ -30,20 +30,21 @@ else
     "$HOME/.config/polybar/scripts/check-updates-service.sh" &>/dev/null &
 fi
 
-# Color the output based on number of updates
-if [ "$updates" -gt 200 ]; then
-    # Critical level - red
-    echo "%{F#fc8362}󰚰 $updates%{F-}"
-elif [ "$updates" -gt 100 ]; then
-    # Warning level - yellow (using your color 1)
-    echo "%{F#ffd88a}󰚰 $updates%{F-}"
-else
-    # Normal level - use your theme color for updates (color 2)
-    echo "󰚰 $updates"
-fi
 
 # Clicking will force refresh the cache
 if [ "$1" = "refresh" ]; then
     "$HOME/.config/polybar/scripts/check-updates-service.sh" &>/dev/null &
     echo "Refreshing..."
+else
+    # Color the output based on number of updates
+  if [ "$updates" -gt 200 ]; then
+      # Critical level - red
+      echo "%{F#fc8362}󰚰 $updates%{F-}"
+  elif [ "$updates" -gt 100 ]; then
+      # Warning level - yellow (using your color 1)
+      echo "%{F#ffd88a}󰚰 $updates%{F-}"
+  else
+      # Normal level - use your theme color for updates (color 2)
+      echo "󰚰 $updates"
+  fi
 fi
