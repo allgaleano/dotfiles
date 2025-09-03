@@ -1,0 +1,27 @@
+window {
+  font-size: 16px;
+  font-family: "Fira Code Nerd Font";
+  border-radius: 10px;
+  background-color: rgba(10, 10, 10, 0.6);
+}
+
+#input {
+  margin: 5px;
+  background-color: rgba(10, 10, 10, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+#input:focus {
+  border: 2px solid rgba(255, 255, 255,0.6);
+}
+
+#entry:selected {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+}
+
+#text:selected {
+  color: black;
+  margin-left: 10px;
+}

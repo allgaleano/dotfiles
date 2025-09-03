@@ -1,0 +1,90 @@
+{
+   "hyprland/workspaces": {
+        "format": "{name}",
+        "activate-only": true,
+        "on-click": "activate"
+    },
+    "hyprland/window": {
+        "format": "{class}",
+        "icon" : true,
+        "icon-size": 16,
+        "max-length": 50
+    },
+    "battery": {
+      "bat": "BAT1",
+      "interval": 3,
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "format": "{capacity}% {icon}",
+      "format-plugged" : "{capacity}% {icon} ",
+      "format-icons": ["", "", "", "", ""],
+      "max-length": 25,
+      "full-at": 94,
+      "tooltip": false,
+      "events": {
+        "on-discharging-warning": "notify-send 'Low Battery' '{capacity}% battery remaining'",
+        "on-discharging-critical": "notify-send 'Low Battery' '{capacity}% battery remaining' -u critical"
+      }
+    },
+    "clock": {
+      "format": "{:%a, %d/%m %H:%M }",
+      "on-click": "toggle",
+      "tooltip": false
+    },
+    "cpu" : {
+      "interval": 1,
+      "format": "{usage}%  ",
+      "tooltip": false,
+      "states" : {
+        "warning": 70,
+        "critical": 90
+      }
+    },
+    "memory" : {
+      "interval": 1,
+      "format": "{used}MB  ",
+      "tooltip": false,
+      "states" : {
+        "warning": 70,
+        "critical": 90
+      }
+    },
+    "network" : {
+      "interval": 1,
+      "format": "{ifname}",
+      "format-wifi": "{essid} ({signalStrength}%)  ",
+      "format-ethernet": "{ipaddr}  ",
+      "format-disconnected": "", 
+      "tooltip-format": "{ifname} via {gwaddr}  ",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+      "tooltip-format-ethernet": "{ifname} ",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 50
+    },
+    "backlight" : {
+      "interval": 1,
+      "format": "{percent}% 󰖨 ",
+      "tooltip": false
+    },
+    "pulseaudio": {
+      "format": "{volume}% {icon}",
+      "format-muted": "M  ",
+      "format-icons" : [" ", " ", " "],
+      "tooltip": false,
+      "on-click": "pavucontrol"
+    },
+    "bluetooth" : {
+      "format": "",
+      "format-disabled" : "",
+      "format-connected" : "{device_alias} {device_battery_percentage}% ",
+      "tooltip": false,
+      "on-click": "blueman-manager"
+    },
+    "custom/power": {
+      "format" : " ",
+      "tooltip" : false,
+      "on-click" : "wlogout"
+    }
+}

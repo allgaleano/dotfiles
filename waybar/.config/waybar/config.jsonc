@@ -1,0 +1,34 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height" : 10,
+    "margin-top": 10,
+    "margin-right": 15,
+    "margin-left" : 15,
+    "spacing" : 10,
+
+    "include" : ["~/.config/waybar/modules.json"],
+
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center" : ["clock"],
+    "modules-right": ["group/settings", "group/info", "custom/power"],
+
+    "group/info" : {
+      "orientation" : "horizontal",
+      "modules" : [
+        "battery",
+        "cpu",
+        "memory",
+        "network"
+      ]
+    },
+
+    "group/settings" : {
+      "orientation" : "horizontal",
+      "modules" : [
+        "backlight",
+        "pulseaudio",
+        "bluetooth"
+      ]
+    }
+}

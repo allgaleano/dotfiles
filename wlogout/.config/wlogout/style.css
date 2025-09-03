@@ -1,0 +1,49 @@
+* {
+  font-family: "Fira Code Nerd Font", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+window {
+  background-color: rgba(12, 12, 12, 0.1);
+}
+
+button {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15%; /* Adjust size as needed */
+}
+
+button:hover {
+  border: 2px solid #ffffff;
+}
+
+#shutdown {
+  background-image: image(url("icons/shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url("icons/reboot.png"));
+}
+
+#lock {
+  background-image: image(url("icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url("icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url("icons/suspend.png"));
+}
+
+#hibernate {
+  background-image: image(url("icons/hibernate.png"));
+}
