@@ -25,7 +25,7 @@ window {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      1px solid;
+    border:                      0px solid;
     border-radius:               10px;
     border-color:                @border-colour;
     cursor:                      "default";
@@ -70,12 +70,12 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     5px 10px;
-    border:                      1px solid;
+    padding:                     10px 10px;
+    border:                      0px solid;
     border-radius:               10px;
     border-color:                transparent;
     background-color:            transparent;
-    text-color:                  @foreground-colour;
+    text-color:                  var(selected-light);
     cursor:                      pointer;
 }
 
@@ -87,7 +87,7 @@ element-icon {
 }
 
 element selected.normal {
-    border-color:                var(selected);
+    background-color:            var(selected-transparency);
     text-color:                  var(selected);
 }
 
