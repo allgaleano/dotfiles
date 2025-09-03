@@ -6,7 +6,7 @@ set $mmd Mod4
 set $fm eDP
 set $sm HDMI-A-1-0
 
-set $pc #fbf8cc
+set $pc #ffffff
 set $sc #636250
 
 include ~/.config/i3/workspace.conf
