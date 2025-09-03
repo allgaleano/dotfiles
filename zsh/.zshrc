@@ -42,7 +42,7 @@ fi
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 alias win11-start="virsh --connect qemu:///system start win11"
-alias win11-connect="xfreerdp3 /v:192.168.122.13 /u:galeano /p:galeano-arch /d:. /dynamic-resolution /sound /size:100% -grab-keyboard > /dev/null 2>&1 & disown"
+alias win11-connect="xfreerdp3 /v:192.168.122.13 /u:galeano /p:galeano-arch /d:. /dynamic-resolution /sound +clipboard +drives /size:100% -grab-keyboard > /dev/null 2>&1 & disown"
 alias win11-shutdown="virsh --connect qemu:///system shutdown win11"
 alias vm-list-all="virsh --connect qemu:///system list --all"
 neofetch
@@ -50,3 +50,5 @@ neofetch
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+PATH=~/.console-ninja/.bin:$PATH
