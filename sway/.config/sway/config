@@ -1,0 +1,186 @@
+workspace_layout default
+
+set $mod Mod1
+set $mmd Mod4
+
+set $laptop eDP-1
+set $external HDMI-A-1
+
+include ~/.config/sway/workspace.conf
+
+# Place the external monitor on top
+output $external mode 2560x1440@143.912Hz position 0 0
+
+# Place the laptop monitor directly below it
+output $laptop mode 1920x1080@144.001Hz position 0 1440
+
+# Replace 'PNP0C50:0e_06CB:7E7E_Touchpad' with your device's identifier
+# Use '*' for all devices of a certain type
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+input type:keyboard {
+    repeat_rate 50
+    repeat_delay 300
+    xkb_layout es
+}
+
+output * bg ~/Media/Pictures/wallpapers/gradient_3.jpg fill
+
+exec mako
+
+# Sharing screen sticky window hide
+# for_window [floating_from="auto" title=" is sharing your screen.$"] border none, sticky enable, move position 0 px -55 px
+
+# --- Gaps & Borders ---
+gaps inner 10
+gaps outer 0
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Meslo LGM Nerd Font 10
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+# exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume-up.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume-down.sh
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume-mute.sh
+bindsym XF86AudioMicMute exec --no-startup-id ~/.config/i3/scripts/microphone-mute.sh
+
+# Brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/brightness_control.sh up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/brightness_control.sh down
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+# tiling_drag modifier titlebar
+
+# start a terminal
+bindsym $mod+Return exec /home/galeano/.cargo/bin/alacritty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+# bindsym $mod+d exec --no-startup-id dmenu_run
+
+# rofi
+bindsym $mod+d exec wofi --show drun
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+# bindsym $mod+Left focus left
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+# bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+# bindsym $mod+Shift+Left move left
+# bindsym $mod+Shift+Down move down
+# bindsym $mod+Shift+Up move up
+# bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+# bindsym $mod+h split h
+
+# split in vertical orientation
+# bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
+
+# Screenshots
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Print exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" ~/Media/Pictures/screenshots/$(date +'%s_grim.png')
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+# bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+# bindsym $mod+a focus parent
+
+# lock screen
+bindsym $mod+Shift+x exec swaylock -c 000000 # -c sets background color
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+	bindsym l resize grow width 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar {
+    swaybar_command waybar
+}
