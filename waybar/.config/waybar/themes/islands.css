@@ -38,8 +38,7 @@ window#waybar {
   font-weight: inherit;
   transition: all 0.3s ease;
   border-radius: 12px;
-  padding: 2px 3px;
-  margin: 2px;
+  padding: 2px 4px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
