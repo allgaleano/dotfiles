@@ -4,7 +4,7 @@
     "height" : 30,
     "margin-top": 10,
     "margin-right": 15,
-    "margin-left" : 15,
+    "margin-left" : 16,
     "spacing" : 10,
 
     "include" : ["~/.config/waybar/modules.json"],
