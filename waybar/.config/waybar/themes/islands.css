@@ -5,7 +5,7 @@
 * {
     font-family: "FiraCode Nerd Font", "Font Awesome 6 Free", "Meslo LGM Nerd Font", sans-serif;
     font-size: 13px;
-    border-radius: 20;
+    border-radius: 20px;
     min-height: 0;
 }
 
@@ -117,4 +117,29 @@ tooltip {
 #network.ethernet,
 #network.wifi {
   color: rgb(139, 222, 255);
+}
+
+#custom-spotify {
+  background-color: #191414;
+  color: #1db945;
+  padding: 0px 10px;
+  border: 2px solid rgba(29, 185, 69, 0.5);
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+#custom-spotify.paused {
+  opacity: 0.5;
+}
+
+#custom-updates {
+  margin-right: 7px;
+}
+
+#custom-updates.critical {
+  color: rgb(255, 92, 92);
+}
+
+#custom-updates.warning {
+  color: rgb(253, 207, 78);
 }

@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height" : 10,
+    "height" : 30,
     "margin-top": 10,
     "margin-right": 15,
     "margin-left" : 15,
@@ -9,7 +9,7 @@
 
     "include" : ["~/.config/waybar/modules.json"],
 
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/spotify"],
     "modules-center" : ["clock"],
     "modules-right": ["group/settings", "group/info", "custom/power"],
 
@@ -19,6 +19,7 @@
         "battery",
         "cpu",
         "memory",
+        "custom/updates",
         "network"
       ]
     },

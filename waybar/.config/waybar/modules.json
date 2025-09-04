@@ -71,7 +71,7 @@
       "format-disconnected": "󰤮 ", 
       "tooltip-format": "{ifname} via {gwaddr}  ",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-      "tooltip-format-ethernet": "{ipaddr}/{cidr3} 󰓅 {bandwidthTotalBytes}",
+      "tooltip-format-ethernet": "󰓅 {bandwidthTotalBytes}",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
     },
@@ -100,5 +100,25 @@
       "format" : " ",
       "tooltip" : false,
       "on-click" : "wlogout"
+    },
+    "custom/spotify" : {
+      "format": "{}",
+      "return-type": "json",
+      "interval": 1, 
+      "exec": "~/.config/waybar/spotify.sh", 
+      "on-click": "playerctl --player=spotify play-pause",
+      "on-click-right": "playerctl --player=spotify next",
+      "on-scroll-up": "playerctl --player=spotify previous",
+      "on-scroll-down": "playerctl --player=spotify next",
+      "tooltip": true,
+      "escape": true,
+      "max-length": 50
+    },
+    "custom/updates" : {
+      "format": "{}",
+      "return-type": "json",
+      "interval": 1800,
+      "exec": "~/.config/waybar/checkupdates.sh",
+      "max-length": 20
     }
 }
