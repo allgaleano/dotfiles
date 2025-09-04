@@ -29,7 +29,7 @@ window#waybar {
 #workspaces button.active {
   background: rgba(255, 255, 255, 1);
   color: #000000;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 #workspaces button:hover {
