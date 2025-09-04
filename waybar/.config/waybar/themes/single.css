@@ -1,0 +1,123 @@
+/* Waybar style.css */
+
+/* --- Define Colors and Fonts --- */
+
+* {
+    font-family: "FiraCode Nerd Font", "Font Awesome 6 Free", "Meslo LGM Nerd Font", sans-serif;
+    font-size: 13px;
+    border-radius: 20;
+    min-height: 0;
+}
+
+/* --- Main Bar --- */
+window#waybar {
+    background: transparent;
+}
+
+window#waybar > box {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 3px;
+}
+
+#workspaces {
+  background: transparent;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+#workspaces button {
+  background: transparent;
+  border-radius: 12px;
+  padding: 2px 3px;
+  margin: 2px;
+}
+
+#workspaces button.active {
+  background: rgba(255, 255, 255, 1);
+  color: #000000;
+  font-weight: bold;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgb(255, 255, 255);
+  font-weight: inherit;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  padding: 2px 3px;
+  margin: 2px;
+}
+
+#battery {
+  color: rgb(255,255,255);
+  margin-right: 12px;
+}
+
+#battery.plugged {
+  color: rgb(105, 255, 120);
+}
+
+#info,
+#settings {
+  padding: 5px 10px;
+}
+
+#cpu {
+  margin-right: 7px;
+}
+
+#cpu.warning {
+  color: rgb(253, 207, 78);
+}
+
+#cpu.critical {
+  color: rgb(224, 49, 49);
+}
+
+#memory {
+  margin-right: 7px;
+}
+
+#memory.warning {
+  color: rgb(253, 207, 78);
+}
+
+#memory.critical {
+  color: rgb(224, 49, 49);
+}
+
+#backlight {
+  margin-right: 7px;
+}
+
+#pulseaudio {
+  margin-right: 7px;
+}
+
+#custom-power {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#clock {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+tooltip {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  text-shadow: none;
+}
+
+#network.ethernet,
+#network.wifi {
+  color: rgb(139, 222, 255);
+}
