@@ -114,11 +114,10 @@
       "escape": true,
       "max-length": 50
     },
-    "custom/updates" : {
+    "custom/updates": {
       "format": "{}",
+      "exec": "cat /tmp/waybar-updates.json",
       "return-type": "json",
-      "interval": 1800,
-      "exec": "~/.config/waybar/checkupdates.sh",
-      "max-length": 20
+      "interval": 60
     }
 }
