@@ -18,7 +18,8 @@
           "critical": 15
       },
       "format": "{capacity}% {icon}",
-      "format-plugged" : "{capacity}% {icon} ",
+      "format-charging" : "{capacity}% {icon} ",
+      "fomar-plugged" : "{icon} ",
       "format-icons": ["", "", "", "", ""],
       "max-length": 25,
       "full-at": 94,

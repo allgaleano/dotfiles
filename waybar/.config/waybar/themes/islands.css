@@ -50,6 +50,7 @@ window#waybar {
   margin-right: 12px;
 }
 
+#battery.charging,
 #battery.plugged {
   color: rgb(105, 255, 120);
 }
