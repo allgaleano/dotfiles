@@ -93,8 +93,7 @@
       "format-on" : "󰂯",
       "format-off" : "󰂲",
       "format-disabled" : "",
-      "format-connected" : "{device_alias} 󰂱",
-      "tooltip-format-connected-battery": "{device_battery_percentage}%",
+      "format-connected" : "{device_alias} ({device_battery_percentage}%) 󰂱",
       "on-click": "blueman-manager"
     },
     "custom/power": {
