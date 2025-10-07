@@ -19,14 +19,14 @@
     hover:          #3E4451FF;   /* Hover - Slightly lighter dark */
 
     /* Font */
-    font: "Iosevka Nerd Font 10";
+    font: "JetBrainsMono Nerd Font 10";
 }
 
 /*****----- Configuration -----*****/
 configuration {
-    modi:                       "drun";
+    modi:                       "drun, emoji";
     show-icons:                 true;
-    display-drun:               "";
+    display-drun:               " ";
     drun-display-format:        "{name}";
 }
 
@@ -35,8 +35,9 @@ window {
     transparency:                "real";
     location:                    center;
     anchor:                      center;
-    fullscreen:                  false;
-    width:                       400px;
+    fullscreen:                  true;
+    width:                       100%;
+    height:                      100%;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -46,7 +47,7 @@ window {
     border:                      0px solid;
     border-radius:               15px;
     border-color:                transparent;
-    background-color:            @background;
+    background-color:            #00000090;
     cursor:                      "default";
 }
 
@@ -54,23 +55,24 @@ window {
 mainbox {
     enabled:                     true;
     spacing:                     0px;
-    margin:                      0px;
+    margin:                      25%;
+    width:                       50%;
     padding:                     0px;
-    border:                      1px solid;
+    border:                      0px solid;
     border-radius:               15px;
     border-color:                @selected;
-    background-color:            transparent;
+    background-color:            @background;
     children:                    [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     20px;
     margin:                      0px;
     padding:                     15px;
     border:                      0px solid;
-    border-radius:               15px;
+    border-radius:               5px;
     border-color:                @selected;
     background-color:            @background;
     text-color:                  #FFFFFFFF;
@@ -113,7 +115,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
 
-    spacing:                     5px;
+    spacing:                     0px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -136,7 +138,7 @@ element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     8px 12px;
+    padding:                     6px 10px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -166,7 +168,7 @@ element selected.normal {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        32px;
+    size:                        28px;
     cursor:                      inherit;
 }
 
