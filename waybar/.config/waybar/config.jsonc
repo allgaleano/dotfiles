@@ -16,10 +16,10 @@
     "group/info" : {
       "orientation" : "horizontal",
       "modules" : [
-        "battery",
         "cpu",
         "memory",
         "custom/updates",
+        "battery",
         "network"
       ]
     },
@@ -27,8 +27,6 @@
     "group/settings" : {
       "orientation" : "horizontal",
       "modules" : [
-        "backlight",
-        "pulseaudio",
         "bluetooth"
       ]
     }

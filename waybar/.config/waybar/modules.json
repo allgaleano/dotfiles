@@ -12,17 +12,17 @@
     },
     "battery": {
       "bat": "BAT1",
-      "interval": 3,
+      "adapter" : "ADP1",
+      "interval": 2,
       "states": {
           "warning": 30,
           "critical": 15
       },
       "format": "{capacity}% {icon}",
       "format-charging" : "{capacity}% {icon} ",
-      "fomar-plugged" : "{icon} ",
+      "format-plugged" : "{icon} ",
       "format-icons": ["", "", "", "", ""],
       "max-length": 25,
-      "full-at": 94,
       "tooltip": false,
       "events": {
         "on-discharging-warning": "notify-send 'Low Battery' '{capacity}% battery remaining'",
@@ -84,7 +84,7 @@
     "pulseaudio": {
       "format": "{volume}% {icon}",
       "format-muted": "M  ",
-      "format-icons" : [" ", " ", "  "],
+      "format-icons" : [" ", " ", "  "],
       "tooltip": false,
       "on-click": "pavucontrol"
     },
