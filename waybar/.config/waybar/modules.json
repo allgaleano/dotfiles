@@ -118,6 +118,7 @@
       "format": "{}",
       "exec": "cat /tmp/waybar-updates.json",
       "return-type": "json",
-      "interval": 60
+      "interval": 60,
+      "on-click" : "~/.config/waybar/update-checker.sh"
     }
 }
