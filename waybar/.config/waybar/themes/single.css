@@ -56,11 +56,11 @@ window#waybar > box {
   margin-right: 16px;
 }
 
-#battery.plugged,
 #battery.charging {
   color: rgb(105, 255, 120);
 }
 
+#battery.plugged,
 #battery.full {
   color:rgb(139, 222, 255);
 }

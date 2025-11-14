@@ -20,7 +20,7 @@
       },
       "format": "{capacity}% {icon}",
       "format-charging" : "{capacity}% {icon} ",
-      "format-plugged" : "{icon} ",
+      "format-plugged" : "{capacity}% {icon}",
       "format-icons": ["", "", "", "", ""],
       "max-length": 25,
       "tooltip": false,
