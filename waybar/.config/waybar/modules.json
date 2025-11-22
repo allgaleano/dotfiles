@@ -34,7 +34,8 @@
       "on-click": "toggle",
       "tooltip-format": "<tt><small>{calendar}</small></tt>",
       "calendar": {
-            "mode-mon-col"  : 3,
+            "mode" : "year",
+            "mode-mon-col"  : 4,
             "on-scroll"     : 1,
             "on-click-right": "mode",
             "format": {
@@ -47,8 +48,8 @@
     },
     "cpu" : {
       "interval": 1,
-      "format": "{usage}%  ",
-      "tooltip": false,
+      "format": " ",
+      "tooltip": true,
       "states" : {
         "warning": 70,
         "critical": 90
@@ -56,8 +57,8 @@
     },
     "memory" : {
       "interval": 1,
-      "format": "{used}MB  ",
-      "tooltip": false,
+      "format": " ",
+      "tooltip": true,
       "states" : {
         "warning": 70,
         "critical": 90
@@ -93,7 +94,10 @@
       "format-on" : "󰂯",
       "format-off" : "󰂲",
       "format-disabled" : "",
-      "format-connected" : "{device_alias} ({device_battery_percentage}%) 󰂱",
+      "format-connected" : "󰂱",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\nBattery: {device_battery_percentage}%",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\nBattery: {device_battery_percentage}%",
       "on-click": "blueman-manager"
     },
     "custom/power": {
@@ -119,6 +123,7 @@
       "exec": "cat /tmp/waybar-updates.json",
       "return-type": "json",
       "interval": 60,
+      "tooltip" : true,
       "on-click" : "~/.config/waybar/update-checker.sh"
     }
 }
