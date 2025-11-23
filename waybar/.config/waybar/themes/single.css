@@ -5,8 +5,6 @@
 * {
     font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Font Awesome 6 Free", sans-serif;
     font-size: 16px;
-    border-radius: 20;
-    min-height: 0;
 }
 
 /* --- Main Bar --- */
@@ -16,36 +14,35 @@ window#waybar {
 
 window#waybar > box {
   background-color: rgba(20, 20, 20, 0.6);
-  padding: 0px 10px;
+  padding: 5px 10px;
   border-radius: 0px;
 }
 
 #workspaces {
   background: transparent;
+  border-radius: 20px;
 }
 
 #workspaces button {
   background: transparent;
+  color: rgb(200, 200, 200);
   border-radius: 15px;
-  padding: 3px 6px;
   margin: 2px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
+  padding: 0px 5px;
 }
 
 #workspaces button.active {
-  background: rgb(199, 199, 199);
-  color: #000000;
-  font-weight: 600;
+  background: rgb(200, 200, 200);
+  color: rgb(20, 20, 20);
+  padding: 0px 10px;
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: rgb(255, 255, 255);
-  font-weight: inherit;
-  transition: all 0.3s ease;
+  background: rgb(200, 200, 200);
+  color: transparent;
+  padding: 0px 10px;
+  border-color: rgb(200, 200, 200);
+  transition: 0.1s ease-in-out;
 }
 
 #battery {
@@ -59,7 +56,7 @@ window#waybar > box {
 
 #battery.plugged,
 #battery.full {
-  color:rgb(139, 222, 255);
+  color:rgb(105, 255, 120);
 }
 
 #battery.discharging {

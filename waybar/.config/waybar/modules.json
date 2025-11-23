@@ -18,12 +18,13 @@
           "warning": 30,
           "critical": 15
       },
-      "format": "{capacity}% {icon}",
-      "format-charging" : "{capacity}% {icon} ",
-      "format-plugged" : "{capacity}% {icon}",
+      "format": "{icon}",
+      "format-charging" : "{icon} ",
+      "format-plugged" : "{icon}",
       "format-icons": ["", "", "", "", ""],
       "max-length": 25,
-      "tooltip": false,
+      "tooltip": true,
+      "tooltip-format": "{capacity}%\n{timeTo}",
       "events": {
         "on-discharging-warning": "notify-send 'Low Battery' '{capacity}% battery remaining'",
         "on-discharging-critical": "notify-send 'Low Battery' '{capacity}% battery remaining' -u critical"
@@ -67,7 +68,7 @@
     "network" : {
       "interval": 1,
       "format": "{ifname}",
-      "format-wifi": "{essid} {icon}",
+      "format-wifi": "{icon}",
       "format-icons" : ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
       "format-ethernet": "{ifname}  ",
       "format-disconnected": "󰤮 ", 

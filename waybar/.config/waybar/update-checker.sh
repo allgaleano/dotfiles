@@ -54,7 +54,7 @@ fi
 
 # Prepare tooltip and text
 TOOLTIP="Official: $official_updates\nAUR: $aur_updates"
-TEXT="$total_updates  "
+TEXT=" "
 
 # Write the JSON output to the cache file
 printf '{"text":"%s", "tooltip":"%s", "class":"%s"}\n' "$TEXT" "$TOOLTIP" "$class" > "$CACHE_FILE"
