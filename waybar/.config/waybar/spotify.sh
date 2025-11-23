@@ -26,8 +26,8 @@ if [ $EXIT_CODE -eq 0 ]; then
     fi
 
     # Format the display text with a Spotify icon (requires a Nerd Font)
-    TEXT="  $TITLE"
-    TOOLTIP="$ARTIST - $ALBUM"
+    TEXT=" "
+    TOOLTIP="$TITLE\n$ARTIST - $ALBUM"
     
     # Set a CSS class based on the player status
     CLASS="playing"

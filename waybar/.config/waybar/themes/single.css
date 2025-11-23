@@ -106,8 +106,7 @@ window#waybar > box {
 }
 
 tooltip {
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgb(0, 0, 0);
   color: white;
   padding: 10px;
   border-radius: 10px;
@@ -121,11 +120,8 @@ tooltip {
 }
 
 #custom-spotify {
-  color: #1db945;
-  padding: 0px 10px;
-  border: 0px solid rgba(29, 185, 69, 0.5);
-  margin-left: 10px;
-  transition: all 0.3s ease;
+  color: rgb(105, 255, 120);
+  transition: all 0.1s ease;
 }
 
 #custom-spotify.paused {

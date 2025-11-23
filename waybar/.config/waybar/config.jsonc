@@ -9,9 +9,9 @@
 
     "include" : ["~/.config/waybar/modules.json"],
 
-    "modules-left": ["hyprland/workspaces", "hyprland/window", "custom/spotify"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center" : ["clock"],
-    "modules-right": ["group/settings", "group/info", "custom/power"],
+    "modules-right": ["custom/spotify","group/settings", "group/info", "custom/power"],
 
     "group/info" : {
       "orientation" : "horizontal",
