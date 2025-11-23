@@ -67,14 +67,12 @@
     },
     "network" : {
       "interval": 1,
-      "format": "{ifname}",
       "format-wifi": "{icon}",
       "format-icons" : ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-      "format-ethernet": "{ifname}  ",
+      "format-ethernet": " ",
       "format-disconnected": "󰤮 ", 
-      "tooltip-format": "{ifname} via {gwaddr}  ",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-      "tooltip-format-ethernet": "󰓅 {bandwidthTotalBytes}",
+      "tooltip-format-ethernet": "{ifname}\n 󰓅 {bandwidthTotalBytes}",
       "tooltip-format-disconnected": "Disconnected",
       "max-length": 50
     },
