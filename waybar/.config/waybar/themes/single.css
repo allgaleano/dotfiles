@@ -3,8 +3,8 @@
 /* --- Define Colors and Fonts --- */
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Font Awesome 6 Free", sans-serif;
-    font-size: 16px;
+    font-family: "NotoSansM Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
 }
 
 /* --- Main Bar --- */
@@ -13,41 +13,41 @@ window#waybar {
 }
 
 window#waybar > box {
-  background-color: rgba(20, 20, 20, 0.6);
-  padding: 5px 10px;
-  border-radius: 0px;
-}
-
-#workspaces {
-  background: transparent;
-  border-radius: 20px;
+  background-color: rgba(0, 0, 0,0.6);
+  padding: 1px 10px;
 }
 
 #workspaces button {
-  background: transparent;
-  color: rgb(200, 200, 200);
+  background: rgba(30,30,30,0.8);
+  color: transparent;
+  font-weight: bold;
   border-radius: 15px;
-  margin: 2px;
-  padding: 0px 5px;
+  margin: 3px 3px;
+  padding: 0px 4px;
 }
 
 #workspaces button.active {
   background: rgb(200, 200, 200);
   color: rgb(20, 20, 20);
-  padding: 0px 10px;
+  padding: 0px 4px;
+  font-weight: bold;
 }
 
 #workspaces button:hover {
   background: rgb(200, 200, 200);
   color: transparent;
+  font-weight: bold;
   padding: 0px 10px;
   border-color: rgb(200, 200, 200);
   transition: 0.1s ease-in-out;
 }
 
+#batter {
+  margin: 0px 10px;
+}
+
 #battery {
   color: rgb(255,255,255);
-  margin-right: 16px;
 }
 
 #battery.charging {
@@ -63,13 +63,8 @@ window#waybar > box {
   color:rgb(253, 207, 78);
 }
 
-#info,
-#settings {
-  padding: 0px;
-}
-
 #cpu {
-  margin-right: 7px;
+  margin: 0 10px;
 }
 
 #cpu.warning {
@@ -81,7 +76,7 @@ window#waybar > box {
 }
 
 #memory {
-  margin-right: 7px;
+  margin: 0px 10px;
 }
 
 #memory.warning {
@@ -90,19 +85,6 @@ window#waybar > box {
 
 #memory.critical {
   color: rgb(224, 49, 49);
-}
-
-#backlight {
-  margin-right: 7px;
-}
-
-#pulseaudio {
-  margin-right: 7px;
-}
-
-#custom-power {
-  font-size: 16px;
-  margin-right: 10px;
 }
 
 tooltip {
@@ -116,6 +98,7 @@ tooltip {
 
 #network.ethernet,
 #network.wifi {
+  margin: 0 10px;
   color: rgb(139, 222, 255);
 }
 
@@ -129,7 +112,7 @@ tooltip {
 }
 
 #custom-updates {
-  margin-right: 7px;
+  margin: 0 10px;
 }
 
 #custom-updates.critical {
@@ -138,4 +121,12 @@ tooltip {
 
 #custom-updates.warning {
   color: rgb(253, 207, 78);
+}
+
+#clock {
+  font-weight: bold;
+}
+
+#bluetooth {
+  margin: 0 5px;
 }

@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height" : 30,
+    "height" : 0,
     "margin-top": 0,
     "margin-right": 0,
     "margin-left" : 0,
@@ -11,23 +11,17 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center" : ["clock"],
-    "modules-right": ["custom/spotify","group/settings", "group/info", "custom/power"],
+    "modules-right": ["custom/spotify","group/info", "custom/power"],
 
     "group/info" : {
       "orientation" : "horizontal",
       "modules" : [
+        "bluetooth",
         "cpu",
         "memory",
         "custom/updates",
         "battery",
         "network"
-      ]
-    },
-
-    "group/settings" : {
-      "orientation" : "horizontal",
-      "modules" : [
-        "bluetooth"
       ]
     }
 }

@@ -21,7 +21,7 @@
       "format": "{icon}",
       "format-charging" : "{icon} ",
       "format-plugged" : "{icon}",
-      "format-icons": ["", "", "", "", ""],
+      "format-icons": [" ", " ", " ", " ", " "],
       "max-length": 25,
       "tooltip": true,
       "tooltip-format": "{capacity}%\n{timeTo}",
@@ -49,7 +49,7 @@
     },
     "cpu" : {
       "interval": 1,
-      "format": " ",
+      "format": "",
       "tooltip": true,
       "states" : {
         "warning": 70,
@@ -58,7 +58,7 @@
     },
     "memory" : {
       "interval": 1,
-      "format": " ",
+      "format": "",
       "tooltip": true,
       "states" : {
         "warning": 70,
