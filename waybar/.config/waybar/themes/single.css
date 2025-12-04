@@ -19,18 +19,21 @@ window#waybar > box {
 
 #workspaces button {
   background: rgba(30,30,30,0.8);
-  color: transparent;
+  color: #666666;
   font-weight: bold;
   border-radius: 15px;
   margin: 3px 3px;
-  padding: 0px 4px;
+  padding: 0px 5px;
+  min-width: 15px;
+  transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.active {
   background: rgb(200, 200, 200);
   color: rgb(20, 20, 20);
-  padding: 0px 4px;
   font-weight: bold;
+  min-width: 40px;
+  transition: all 0.2s ease-in-out;
 }
 
 #workspaces button:hover {
@@ -39,7 +42,7 @@ window#waybar > box {
   font-weight: bold;
   padding: 0px 10px;
   border-color: rgb(200, 200, 200);
-  transition: 0.1s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #batter {
@@ -96,9 +99,12 @@ tooltip {
   text-shadow: none;
 }
 
+#network {
+  margin-left: 10px;
+}
+
 #network.ethernet,
 #network.wifi {
-  margin: 0 10px;
   color: rgb(139, 222, 255);
 }
 
