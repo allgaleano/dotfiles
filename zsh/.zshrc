@@ -45,12 +45,6 @@ alias win11-start="virsh --connect qemu:///system start win11"
 alias win11-connect="xfreerdp3 /v:192.168.122.13 /u:galeano /p:galeano-arch /d:. /dynamic-resolution /sound +clipboard +drives /size:100% -grab-keyboard > /dev/null 2>&1 & disown"
 alias win11-shutdown="virsh --connect qemu:///system shutdown win11"
 alias vm-list-all="virsh --connect qemu:///system list --all"
-neofetch
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 
 
 function y() {
@@ -61,9 +55,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+fastfetch
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
