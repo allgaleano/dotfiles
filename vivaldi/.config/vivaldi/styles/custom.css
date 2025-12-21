@@ -1,3 +1,7 @@
+.tab {
+  border: 2px solid transparent;
+  border-radius: 20px !important;
+}
 .tab.active {
     border: 2px solid rgba(255,255,255,0.6) !important;
 }
