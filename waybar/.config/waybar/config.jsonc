@@ -11,7 +11,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center" : ["clock"],
-    "modules-right": ["custom/spotify","group/info", "custom/power"],
+    "modules-right": ["tray", "custom/spotify","group/info", "custom/power"],
 
     "group/info" : {
       "orientation" : "horizontal",
@@ -23,5 +23,10 @@
         "battery",
         "network"
       ]
+    },
+
+    "tray" : {
+      "icon-size" : 13,
+      "spacing" : 10
     }
 }

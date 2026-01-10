@@ -21,7 +21,7 @@ window#waybar > box {
   background: rgba(30,30,30,0.8);
   color: #666666;
   font-weight: bold;
-  border-radius: 15px;
+  border-radius: 5px;
   margin: 3px 3px;
   padding: 0px 5px;
   min-width: 15px;
@@ -32,7 +32,6 @@ window#waybar > box {
   background: rgb(200, 200, 200);
   color: rgb(20, 20, 20);
   font-weight: bold;
-  min-width: 40px;
   transition: all 0.2s ease-in-out;
 }
 
