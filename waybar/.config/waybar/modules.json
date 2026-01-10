@@ -18,7 +18,7 @@
           "warning": 30,
           "critical": 15
       },
-      "format": "{icon}",
+      "format": "{capacity} {icon}",
       "format-charging" : "{capacity} {icon} ",
       "format-plugged" : "{icon}",
       "format-icons": [" ", " ", " ", " ", " "],
