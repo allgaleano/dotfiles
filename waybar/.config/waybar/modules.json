@@ -1,129 +1,129 @@
 {
-   "hyprland/workspaces": {
-        "format": "{name}",
-        "activate-only": true,
-        "on-click": "activate"
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "activate-only": true,
+    "on-click": "activate"
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 16,
+    "max-length": 50
+  },
+  "battery": {
+    "bat": "BAT1",
+    "adapter": "ADP1",
+    "interval": 2,
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "hyprland/window": {
-        "format": "{class}",
-        "icon" : true,
-        "icon-size": 16,
-        "max-length": 50
-    },
-    "battery": {
-      "bat": "BAT1",
-      "adapter" : "ADP1",
-      "interval": 2,
-      "states": {
-          "warning": 30,
-          "critical": 15
-      },
-      "format": "{capacity} {icon}",
-      "format-charging" : "{capacity} {icon} ",
-      "format-plugged" : "{icon}",
-      "format-icons": [" ", " ", " ", " ", " "],
-      "max-length": 25,
-      "tooltip": true,
-      "tooltip-format": "{capacity}%\n{timeTo}",
-      "events": {
-        "on-discharging-warning": "notify-send 'Low Battery' '{capacity}% battery remaining'",
-        "on-discharging-critical": "notify-send 'Low Battery' '{capacity}% battery remaining' -u critical"
-      }
-    },
-    "clock": {
-      "format": "{:%H:%M}",
-      "on-click": "toggle",
-      "tooltip-format": "<tt><small>{calendar}</small></tt>",
-      "calendar": {
-            "mode" : "year",
-            "mode-mon-col"  : 4,
-            "on-scroll"     : 1,
-            "on-click-right": "mode",
-            "format": {
-                "months":     "<span color='#cccccc'>{}</span>",
-                "days":       "<span color='#9c9c9c'>{}</span>",
-                "weekdays":   "<span color='#cccccc'>{}</span>",
-                "today":      "<span color='#519efc'><b>{}</b></span>"
-            }
-      }
-    },
-    "cpu" : {
-      "interval": 1,
-      "format": "",
-      "tooltip": true,
-      "states" : {
-        "warning": 70,
-        "critical": 90
-      }
-    },
-    "memory" : {
-      "interval": 1,
-      "format": "",
-      "tooltip": true,
-      "states" : {
-        "warning": 70,
-        "critical": 90
-      }
-    },
-    "network" : {
-      "interval": 1,
-      "format" : "",
-      "format-wifi": "{icon}",
-      "format-icons" : ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
-      "format-ethernet": " ",
-      "format-disconnected": "󰤮 ", 
-      "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-      "tooltip-format-ethernet": "{ifname}\n 󰓅 {bandwidthTotalBytes}",
-      "tooltip-format-disconnected": "Disconnected",
-      "max-length": 50
-    },
-    "backlight" : {
-      "interval": 1,
-      "format": "{percent}% 󰖨 ",
-      "tooltip": false
-    },
-    "pulseaudio": {
-      "format": "{volume}% {icon}",
-      "format-muted": "M  ",
-      "format-icons" : [" ", " ", "  "],
-      "tooltip": false,
-      "on-click": "pavucontrol"
-    },
-    "bluetooth" : {
-      "format": "󰂯",
-      "format-on" : "󰂯",
-      "format-off" : "󰂲",
-      "format-disabled" : "",
-      "format-connected" : "󰂱",
-      "tooltip-format": "{device_enumerate}",
-      "tooltip-format-enumerate-connected": "{device_alias}\nBattery: {device_battery_percentage}%",
-      "tooltip-format-enumerate-connected-battery": "{device_alias}\nBattery: {device_battery_percentage}%",
-      "on-click": "blueman-manager"
-    },
-    "custom/power": {
-      "format" : " ",
-      "tooltip" : false,
-      "on-click" : "wlogout"
-    },
-    "custom/spotify" : {
-      "format": "{}",
-      "return-type": "json",
-      "interval": 1, 
-      "exec": "~/.config/waybar/spotify.sh", 
-      "on-click": "playerctl --player=spotify play-pause",
-      "on-click-right": "playerctl --player=spotify next",
-      "on-scroll-up": "playerctl --player=spotify previous",
-      "on-scroll-down": "playerctl --player=spotify next",
-      "tooltip": true,
-      "escape": true,
-      "max-length": 50
-    },
-    "custom/updates": {
-      "format": "{}",
-      "exec": "cat /tmp/waybar-updates.json",
-      "return-type": "json",
-      "interval": 60,
-      "tooltip" : true,
-      "on-click" : "~/.config/waybar/update-checker.sh"
+    "format": "{capacity} {icon}",
+    "format-charging": "{capacity} {icon} ",
+    "format-plugged": "{icon}",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "max-length": 25,
+    "tooltip": true,
+    "tooltip-format": "{capacity}%\n{timeTo}",
+    "events": {
+      "on-discharging-warning": "notify-send 'Low Battery' '{capacity}% battery remaining'",
+      "on-discharging-critical": "notify-send 'Low Battery' '{capacity}% battery remaining' -u critical"
     }
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "on-click": "toggle",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 4,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#cccccc'>{}</span>",
+        "days": "<span color='#9c9c9c'>{}</span>",
+        "weekdays": "<span color='#cccccc'>{}</span>",
+        "today": "<span color='#519efc'><b>{}</b></span>"
+      }
+    }
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "",
+    "tooltip": true,
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "memory": {
+    "interval": 1,
+    "format": "",
+    "tooltip": true,
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
+  "network": {
+    "interval": 1,
+    "format": "",
+    "format-wifi": "{icon}",
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "format-ethernet": " ",
+    "format-disconnected": "󰤮 ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}\n 󰓅 {bandwidthTotalBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "backlight": {
+    "interval": 1,
+    "format": "{percent}% 󰖨 ",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "M  ",
+    "format-icons": [" ", " ", "  "],
+    "tooltip": false,
+    "on-click": "pavucontrol"
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "",
+    "format-connected": "󰂱",
+    "tooltip-format": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\nBattery: {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\nBattery: {device_battery_percentage}%",
+    "on-click": "blueman-manager"
+  },
+  "custom/power": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "wlogout"
+  },
+  "custom/spotify": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 1,
+    "exec": "~/.config/waybar/spotify.sh",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-click-right": "playerctl --player=spotify next",
+    "on-scroll-up": "playerctl --player=spotify previous",
+    "on-scroll-down": "playerctl --player=spotify next",
+    "tooltip": true,
+    "escape": true,
+    "max-length": 50
+  },
+  "custom/updates": {
+    "format": "{}",
+    "exec": "cat /tmp/waybar-updates.json",
+    "return-type": "json",
+    "interval": 60,
+    "tooltip": true,
+    "on-click": "~/.config/waybar/update-checker.sh"
+  }
 }
