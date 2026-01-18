@@ -218,3 +218,8 @@ tooltip {
 #bluetooth {
   margin: 0 5px;
 }
+
+#custom-notification {
+    margin: 0 10px;
+    color: @blue;
+}

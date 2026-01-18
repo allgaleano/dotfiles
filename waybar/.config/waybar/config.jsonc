@@ -21,7 +21,8 @@
         "memory",
         "custom/updates",
         "battery",
-        "network"
+        "network",
+        "custom/notification"
       ]
     },
 
