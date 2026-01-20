@@ -98,7 +98,7 @@
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\nBattery: {device_battery_percentage}%",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\nBattery: {device_battery_percentage}%",
-    "on-click": "blueman-manager"
+    "on-click": "overskride"
   },
   "custom/power": {
     "format": " ",
