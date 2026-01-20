@@ -43,6 +43,7 @@ trough {
     background: #181825;
     color: #cdd6f4;
     padding: 0;
+    border: 1px solid #cba6f7;
 }
 
 .notification-background .notification {
@@ -144,6 +145,7 @@ trough {
 .control-center .notification-background {
     border-radius: 7px;
     box-shadow: inset 0 0 0 1px #45475a;
+    border: 0px;
     margin: 4px 10px;
 }
 
@@ -181,7 +183,7 @@ trough {
 }
 
 .control-center .notification-group:focus .notification-background {
-    background-color: #313244;
+    background-color: #272836;
 }
 
 scrollbar slider {
@@ -195,7 +197,7 @@ scrollbar trough {
 
 /* dnd */
 .widget-dnd {
-    margin-top: 5px;
+    margin-top: 10px;
     border-radius: 8px;
     font-size: 1.1rem;
 }
